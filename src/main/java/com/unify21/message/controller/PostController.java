@@ -1,10 +1,7 @@
 package com.unify21.message.controller;
 
 import com.unify21.message.model.SearchParam;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -14,11 +11,18 @@ public class PostController {
     // http post body -> data
     // json, xml, multipart-form / text-plain
 
-    @PostMapping("/postMethod")
-    public String postMethod(@RequestBody SearchParam searchParam){
+    @PostMapping(value = "/postMethod")
+    public SearchParam postMethod(@RequestBody SearchParam searchParam){
+        return searchParam;
+    }
 
+    @PutMapping("/putMethod")
+    public void put(){
 
+    }
 
-        return "OK";
+    @PatchMapping("/patchMethod")
+    public void patch(){
+
     }
 }
